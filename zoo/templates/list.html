@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+    <h1>동물원에 직접 방문해보자</h1>
+
+    <hr>
+    <div class="container">
+    {% for blog in objects%}
+        <h3>{{blog.subject}}</h3>
+        <div>{{blog.content}} 
+
+        </div>
+    {% endfor %}
+    </div>
+    <br>
+    <br>
+
+    <a href="{%url 'home' %}">  
+        <img src="{% static 'woman.png'%}" alt="" width="100" height="100">
+        <br>
+        홈으로 돌아가기
+    </a>
+
+{% endblock %}

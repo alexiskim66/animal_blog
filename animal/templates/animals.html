@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <hr>
+    <div class="container">
+    {% for blog in objects%}
+        <h3>{{blog.subject}}</h3>
+        <div>{{blog.brief}} <a href="{%url 'detail' blog.id %}">...more</a></div>
+        <br><br>
+    {% endfor %}
+    </div>
+
+    <div>
+        <a id="add" href="{% url 'new' %}">동물 데려오기</a>
+    </div>
+
+{% endblock %}

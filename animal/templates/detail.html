@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{blog.subject}}</h1>
+    {{blog.author}}
+    <br>
+    {{blog.date}}
+    <hr color=olive>
+    <br>
+    <div id="content">
+        {{blog.content}}
+    </div>
+    {% if blog.image %}
+    <p><img src="{{blog.image.url}}" alt="" width="30%" height="30%"></p>
+    {% endif %}
+    <br>
+    <a href="{% url 'edit' blog.id %}">Modify</a>
+    <br>
+    <a href="{% url 'delete' blog.id %}">Delete</a>
+
+
+    {% for blog in blog.all %}
+        <img src="{{ blog.image.url }}" width="500px">
+
+        <br>
+        <img src="{{ blog.image_thumbnail.url }}" alt="">
+    {% endfor %}
+
+
+{% endblock %}
+
+</html>
