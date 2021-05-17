@@ -17,6 +17,6 @@ class Blog(models.Model):
 
 class Pictures(models.Model):
     text = models.TextField()
-    image = models.ImageField(upload_to="animal/media", blank=True, null=True)
+    image = models.ImageField(upload_to="detail", blank=True, null=True)
     image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(120,60)],
     format='jpeg')

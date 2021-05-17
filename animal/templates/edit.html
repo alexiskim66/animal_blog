@@ -4,12 +4,9 @@
 
 <h1>Add Information</h1>
 
-<form method="get">
+<form id="update_form" method="post" enctype="multipart/form-data">
     {%csrf_token%}
-    <p>month : <input type="text" name="subject" value="{{blog.subject}}"></p>
-    <p>author : <input type="text" name="author" value="{{blog.author}}"></p>
-    <br>
-    <textarea name="content" id="" cols="100" rows="20">{{blog.content}}</textarea></p>
+    {{edit_Post.as_p}}
     <button type="submit">submit</button>
 </form>
 

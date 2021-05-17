@@ -23,7 +23,7 @@ def detail(request,content_id):
 def delete(request,id):
     d_blog = Blog.objects.get(id=id)
     d_blog.delete()
-    return redirect('home')
+    return redirect('/animal/animals/')
 
 def animals(request):
     objects = Blog.objects.all()
@@ -52,4 +52,4 @@ def edit(request, id):
             post = post_form.save(commit=False)
             post.date = timezone.now()
             post.save()
-        return redirect('/animal/detail/' + str(id))
+        return redirect('/animal/' + str(id))

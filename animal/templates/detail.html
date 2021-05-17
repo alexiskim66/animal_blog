@@ -24,10 +24,10 @@
 
 
     {% for blog in blog.all %}
-        <img src="{{ blog.image.url }}" width="500px">
+        <img src="{{blog.image.url}}" width="500">
 
         <br>
-        <img src="{{ blog.image_thumbnail.url }}" alt="">
+        <img src="{{blog.image_thumbnail.url}}" alt="">
     {% endfor %}
 
 
